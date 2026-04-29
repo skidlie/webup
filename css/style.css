@@ -1,0 +1,160 @@
+/* Clean White background, very subtle off-white for elements, professional dark gray text. */
+:root {
+    --bg-color: #FFFFFF;
+    --text-color: #333333;
+    --primary-btn: #007BFF;
+    --primary-btn-hover: #0056b3;
+    --error-color: #D32F2F;
+    --modal-bg: #FFFFFF;
+    --input-border: #DDDDDD;
+    --subtle-bg: #FAFAFA;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--subtle-bg);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    background-color: var(--bg-color);
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Full-screen Modal Overlay */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--subtle-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: var(--modal-bg);
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 320px;
+}
+
+input[type="password"], input[type="file"], input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+
+input[type="password"] {
+    letter-spacing: 4px;
+}
+
+input[type="file"] {
+    text-align: left;
+}
+
+button {
+    background-color: var(--primary-btn);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--primary-btn-hover);
+}
+
+.error-text {
+    color: var(--error-color);
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.nav-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--primary-btn);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Uploader specific */
+#progress-text {
+    margin-top: 15px;
+    font-weight: 500;
+    color: var(--primary-btn);
+}
+#upload-success {
+    color: #28a745;
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* WebRTC specific */
+#video-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+video {
+    width: 100%;
+    border-radius: 8px;
+    background: #000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+#camera-blocked {
+    font-size: 20px;
+    color: var(--error-color);
+    font-weight: bold;
+    padding: 20px;
+    border: 2px solid var(--error-color);
+    border-radius: 8px;
+}
